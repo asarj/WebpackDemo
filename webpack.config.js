@@ -8,6 +8,11 @@ module.exports = {
   resolveLoader: {
     moduleExtensions: ["-loader"]
   },
+  /*
+    IMPROVEMENT: I used the webpack docs to integrate the same changes in EP3
+    to the newer changes reflected in the docs, the video tutorial follows the
+    old format
+  */
   module: {
         rules: [
             {
