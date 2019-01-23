@@ -41,20 +41,25 @@ module.exports = {
                 test: /.less$/,
                 loader: ['style-loader', 'css-loader?url=false', 'less-loader'],
             },
+
+            {
+                test: /\.css$/,
+                loader: ['style-loader', 'css-loader?url=false']
+            },
+            {
+                test: /\.scss$/,
+                loader: ['postcss-loader', 'css-loader?url=false', 'postcss-loader'],
+            },
             {
                 test: /\.scss$/,
                 loader: ['style-loader', 'css-loader?url=false', 'sass-loader'],
             },
-            // IMPROVEMENT: used updated docs to implement extract text with the mini-css-extract-plugin
             {
-                test: /\.scss@/,
-                use: [
-                    ExtractTextPlugin.loader, "css-loader", "sass-loader",
-                ]
-            },
-            {
-                test: /\.css$/,
-                loader: ['style-loader', 'css-loader?url=false']
+              test: /\.scss@/,
+              // IMPROVEMENT: used updated docs to implement extract text with the mini-css-extract-plugin
+              use: [
+                  ExtractTextPlugin.loader, "css-loader", "postcss-loader", "sass-loader",
+              ]
             }
         ]
     },
